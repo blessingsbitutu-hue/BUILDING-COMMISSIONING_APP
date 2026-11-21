@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Building Commissioning Report</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="app-layout">
+
+    <aside class="sidebar">
+
+        <h2>COMMISSIONING</h2>
+
+        <p>REPORT SYSTEM</p>
+
+        <nav>
+            <a href="#dashboard">Overview Dashboard</a>
+            <a href="#profile">Project Profile</a>
+            <a href="#brief">Commissioning Brief</a>
+            <a href="#services">Building Services Evaluation</a>
+            <a href="#testing">Inspection & Testing</a>
+            <a href="#defects">Non-Conformance Register</a>
+            <a href="#documents">Documentation & Compliance</a>
+            <a href="#actions">Corrective Actions</a>
+            <a href="#recommendations">Recommendations</a>
+        </nav>
+
+    </aside>
+
+    <main class="main-content">
+        <div class="report-cover">
+
+    <p class="cover-brand">BUILDING COMMISSIONING SERVICES</p>
+
+    <div class="cover-line"></div>
+
+    <h1>BUILDING COMMISSIONING REPORT</h1>
+
+    <h2 id="coverProjectName">PROJECT NAME</h2>
+
+    <p class="cover-description">
+        BUILDING SYSTEMS INSPECTION, TESTING,
+        PERFORMANCE EVALUATION AND HANDOVER
+    </p>
+
+    <div class="cover-details">
+
+        <p><strong>Client:</strong> <span id="coverClient">Not Provided</span></p>
+
+        <p><strong>Project Location:</strong> <span id="coverLocation">Not Provided</span></p>
+
+        <p><strong>Prepared By:</strong> <span id="coverPreparedBy">Not Provided</span></p>
+
+        <p><strong>Report Reference:</strong> <span id="coverReference">BCR-001</span></p>
+
+        <p><strong>Reporting Date:</strong> <span id="coverDate">Not Provided</span></p>
+
+    </div>
+    <div class="report-contents">
+
+    <h1>TABLE OF CONTENTS</h1>
+
+    <p>01. Overview Dashboard</p>
+    <p>02. Project Profile</p>
+    <p>03. Commissioning Brief</p>
+    <p>04. Building Services Evaluation</p>
+    <p>05. Inspection & Performance Testing</p>
+    <p>06. Non-Conformance & Defect Register</p>
+    <p>07. Documentation & Compliance Records</p>
+    <p>08. Corrective Actions</p>
+    <p>09. Recommendations</p>
+
+</div>
+
+    <div class="cover-footer">
+        CONFIDENTIAL PROJECT DOCUMENT
+    </div>
+
+</div>
+
+    <h1>BUILDING COMMISSIONING REPORT</h1>
+
+    <h2>1. Overview Dashboard</h2>
+    <div class="dashboard-grid">
+
+    <div class="stat-card">
+        <h3>Total Inspections</h3>
+        <p id="totalInspections">0</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Passed Inspections</h3>
+        <p id="passedInspections">0</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Outstanding Defects</h3>
+        <p id="outstandingDefects">0</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Commissioning Progress</h3>
+        <p id="dashboardProgress">0%</p>
+    </div>
+
+</div>
+
+<div class="progress-container">
+    <h3>Overall Commissioning Progress</h3>
+
+    <div class="progress-track">
+        <div id="progressBar" class="progress-fill"></div>
+    </div>
+</div>
+<h3>Commissioning Progress Calculator</h3>
+
+<label>Total Commissioning Tasks:</label>
+<input type="number" id="totalTasks" min="1" placeholder="Enter total tasks">
+
+<label>Completed Tasks:</label>
+<input type="number" id="completedTasks" min="0" placeholder="Enter completed tasks">
+
+<button onclick="calculateProgress()">
+    Calculate Progress
+</button>
+
+<h3>Overall Progress: <span id="progressResult">0%</span></h3>
+    <p>Overall commissioning progress and project status.</p>
+
+    <label>Overall project status:</label>
+    <select>
+        <option>Select status</option>
+        <option>Not Started</option>
+        <option>In Progress</option>
+        <option>Completed</option>
+    </select>
+
+    <label>Overall commissioning progress (%):</label>
+    <input type="number" placeholder="Enter percentage">
+
+    <hr>
+
+    <section id="profile">
+<h2>2. Project profile</h2>
+<h3>Project Identification</h3>
+
+<label>Project Name:</label>
+<input type="text" id="projectName"
+placeholder="Enter project name">
+
+<label>Client / Developer:</label>
+<input type="text" id="projectClient"
+placeholder="Enter client name">
+
+<label>Project Location:</label>
+<input type="text" id="projectLocation"
+placeholder="Enter project location">
+
+<label>Report Reference:</label>
+<input type="text" id="projectReference"
+value="BCR-001">
+
+<label>Reporting Date:</label>
+<input type="date" id="projectReportDate">
+
+<button type="button" onclick="updateCoverPage()">
+    Update Report Cover
+</button>
+
+
+    <label>Project Name:</label>
+    <input type="text" placeholder="Enter project name">
+
+    <label>Project Location:</label>
+    <input type="text" placeholder="Enter location">
+
+    <label>Client / Developer:</label>
+    <input type="text" placeholder="Enter client">
+
+    <label>Architect:</label>
+    <input type="text" placeholder="Enter architect">
+
+    <label>Project Manager:</label>
+    <input type="text" placeholder="Enter project manager">
+
+    <label>Contractor:</label>
+    <input type="text" placeholder="Enter contractor">
+
+    <label>Building Description:</label>
+    <textarea placeholder="Describe the building project"></textarea>
+
+    <hr>
+
+    <section id="brief">
+<h2>3. Commissioning Brief</h2>
+
+
+    <label>Commissioning Objectives:</label>
+    <textarea placeholder="Enter commissioning objectives"></textarea>
+
+    <label>Scope of Commissioning:</label>
+    <textarea placeholder="Enter scope of work"></textarea>
+
+    <label>Commissioning Methodology:</label>
+    <textarea placeholder="Describe the methodology"></textarea>
+
+    <label>Commissioning Team:</label>
+    <textarea placeholder="Enter team members and responsibilities"></textarea>
+
+    <hr>
+
+    <section id="services">
+<h2>4. Building Services Evaluation</h2>
+
+
+    <label>Structural Systems:</label>
+    <textarea placeholder="Enter structural evaluation"></textarea>
+
+    <label>Electrical Systems:</label>
+    <textarea placeholder="Enter electrical evaluation"></textarea>
+
+    <label>Mechanical / HVAC Systems:</label>
+    <textarea placeholder="Enter mechanical evaluation"></textarea>
+
+    <label>Plumbing and Drainage:</label>
+    <textarea placeholder="Enter plumbing evaluation"></textarea>
+
+    <label>Fire Protection Systems:</label>
+    <textarea placeholder="Enter fire safety evaluation"></textarea>
+
+    <label>Other Building Services:</label>
+    <textarea placeholder="Enter other services"></textarea>
+
+    <hr>
+
+    <section id="testing">
+<h2>5. Inspection & Performance Testing</h2>
+<h3>Inspection Entry Form</h3>
+
+<label>Inspection Activity:</label>
+<input type="text" id="inspectionActivity"
+placeholder="e.g. Electrical installation inspection">
+
+<label>Building System:</label>
+<select id="inspectionSystem">
+    <option value="">Select building system</option>
+    <option>Structural</option>
+    <option>Electrical</option>
+    <option>Mechanical / HVAC</option>
+    <option>Plumbing and Drainage</option>
+    <option>Fire Protection</option>
+    <option>Other</option>
+</select>
+
+<label>Inspection Result:</label>
+<select id="inspectionResult">
+    <option value="">Select result</option>
+    <option value="Pass">Pass</option>
+    <option value="Fail">Fail</option>
+    <option value="Pending">Pending</option>
+</select>
+
+<button type="button" onclick="addInspection()">
+    Add Inspection
+</button>
+
+<h3>Inspection Records</h3>
+
+<table id="inspectionTable">
+    <thead>
+        <tr>
+            <th>No.</th>
+            <th>Inspection Activity</th>
+            <th>Building System</th>
+            <th>Result</th>
+        </tr>
+    </thead>
+
+    <tbody id="inspectionRecords">
+    </tbody>
+</table>
+
+    <label>Inspection Activity:</label>
+    <input type="text" placeholder="Enter inspection activity">
+
+    <label>System Tested:</label>
+    <input type="text" placeholder="Enter system">
+
+    <label>Testing Procedure:</label>
+    <textarea placeholder="Describe testing procedure"></textarea>
+
+    <label>Test Results and Readings:</label>
+    <textarea placeholder="Enter test results"></textarea>
+
+    <label>Performance Status:</label>
+    <select>
+        <option>Select result</option>
+        <option>Pass</option>
+        <option>Fail</option>
+        <option>Pending</option>
+    </select>
+
+    <hr>
+
+    <section id="defects">
+<h2>6. Non-Comformance & Defect Register</h2>
+<h3>Defect Registration Form</h3>
+
+<label>Defect Reference Number:</label>
+<input type="text" id="defectRef" placeholder="e.g. DEF-001">
+
+<label>Building System:</label>
+<select id="defectSystem">
+    <option value="">Select building system</option>
+    <option>Structural</option>
+    <option>Electrical</option>
+    <option>Mechanical / HVAC</option>
+    <option>Plumbing and Drainage</option>
+    <option>Fire Protection</option>
+    <option>Other</option>
+</select>
+
+<label>Defect Description:</label>
+<textarea id="defectDescription"
+placeholder="Describe the identified defect"></textarea>
+
+<label>Location of Defect:</label>
+<input type="text" id="defectLocation"
+placeholder="Enter building location">
+
+<label>Severity:</label>
+<select id="defectSeverity">
+    <option value="">Select severity</option>
+    <option>Critical</option>
+    <option>Major</option>
+    <option>Minor</option>
+</select>
+
+<label>Responsible Contractor:</label>
+<input type="text" id="defectContractor"
+placeholder="Enter responsible contractor">
+
+<label>Defect Status:</label>
+<select id="defectStatus">
+    <option value="Open">Open</option>
+    <option value="In Progress">In Progress</option>
+    <option value="Closed">Closed</option>
+</select>
+
+<button type="button" onclick="addDefect()">
+    Add Defect Record
+</button>
+
+<h3>Registered Defects</h3>
+
+<table id="defectTable">
+    <thead>
+        <tr>
+            <th>Reference</th>
+            <th>System</th>
+            <th>Description</th>
+            <th>Location</th>
+            <th>Severity</th>
+            <th>Contractor</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody id="defectRecords"></tbody>
+</table>
+
+    <label>Defect Reference Number:</label>
+    <input type="text" placeholder="Enter reference number">
+
+    <label>Defect Description:</label>
+    <textarea placeholder="Describe identified defect"></textarea>
+
+    <label>Location of Defect:</label>
+    <input type="text" placeholder="Enter location">
+
+    <label>Severity:</label>
+    <select>
+        <option>Select severity</option>
+        <option>Critical</option>
+        <option>Major</option>
+        <option>Minor</option>
+    </select>
+
+    <hr>
+
+    <section id="documents">
+<h2>7. Documentation & Compliance Records</h2>
+<h3>Document Registration Form</h3>
+
+<label>Document Name:</label>
+<input type="text" id="documentName"
+placeholder="e.g. Electrical Installation Certificate">
+
+<label>Document Reference Number:</label>
+<input type="text" id="documentRef"
+placeholder="Enter document reference">
+
+<label>Document Category:</label>
+<select id="documentCategory">
+    <option value="">Select category</option>
+    <option>Approved Drawings</option>
+    <option>Testing Certificates</option>
+    <option>Inspection Reports</option>
+    <option>Operation and Maintenance Manuals</option>
+    <option>Statutory Approvals</option>
+    <option>Equipment Warranties</option>
+    <option>Other</option>
+</select>
+
+<label>Date Received:</label>
+<input type="date" id="documentDate">
+
+<label>Responsible Person:</label>
+<input type="text" id="documentOfficer"
+placeholder="Enter responsible person">
+
+<label>Compliance Status:</label>
+<select id="documentStatus">
+    <option value="">Select compliance status</option>
+    <option>Compliant</option>
+    <option>Non-Compliant</option>
+    <option>Pending Verification</option>
+</select>
+
+<label>Remarks:</label>
+<textarea id="documentRemarks"
+placeholder="Enter additional remarks"></textarea>
+
+<button type="button" onclick="addDocument()">
+    Add Document Record
+</button>
+
+<h3>Documentation Register</h3>
+
+<table id="documentTable">
+    <thead>
+        <tr>
+            <th>Document Name</th>
+            <th>Reference</th>
+            <th>Category</th>
+            <th>Date Received</th>
+            <th>Responsible Person</th>
+            <th>Compliance</th>
+            <th>Remarks</th>
+        </tr>
+    </thead>
+
+    <tbody id="documentRecords"></tbody>
+</table>
+
+
+    <label>Document Name:</label>
+    <input type="text" placeholder="Enter document name">
+
+    <label>Document Reference:</label>
+    <input type="text" placeholder="Enter reference">
+
+    <label>Compliance Status:</label>
+    <select>
+        <option>Select status</option>
+        <option>Compliant</option>
+        <option>Non-Compliant</option>
+        <option>Pending Verification</option>
+    </select>
+
+    <label>Document Remarks:</label>
+    <textarea placeholder="Enter remarks"></textarea>
+
+    <hr>
+
+    <section id="actions">
+<h2>8. Corrective Actions</h2>
+<h3>Corrective Action Entry Form</h3>
+
+<label>Defect Reference Number:</label>
+<input type="text" id="actionRef" placeholder="e.g. DEF-001">
+
+<label>Corrective Action Required:</label>
+<textarea id="correctiveMeasure"
+placeholder="Describe the corrective work required"></textarea>
+
+<label>Responsible Contractor:</label>
+<input type="text" id="actionContractor"
+placeholder="Enter responsible contractor">
+
+<label>Target Completion Date:</label>
+<input type="date" id="targetDate">
+
+<label>Verification Officer:</label>
+<input type="text" id="verificationOfficer"
+placeholder="Enter verification officer">
+
+<label>Verification Result:</label>
+<select id="verificationResult">
+    <option value="">Select verification result</option>
+    <option>Accepted</option>
+    <option>Rejected</option>
+    <option>Pending</option>
+</select>
+
+<label>Closure Status:</label>
+<select id="actionStatus">
+    <option>Open</option>
+    <option>In Progress</option>
+    <option>Closed</option>
+</select>
+
+<button type="button" onclick="addCorrectiveAction()">
+    Add Corrective Action
+</button>
+
+<h3>Corrective Action Records</h3>
+
+<table id="actionTable">
+    <thead>
+        <tr>
+            <th>Defect Ref.</th>
+            <th>Corrective Action</th>
+            <th>Contractor</th>
+            <th>Target Date</th>
+            <th>Verification Officer</th>
+            <th>Verification</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+
+    <tbody id="actionRecords"></tbody>
+</table>
+
+    <label>Defect Reference:</label>
+    <input type="text" placeholder="Enter defect reference">
+
+    <label>Corrective Measure:</label>
+    <textarea placeholder="Describe corrective action"></textarea>
+
+    <label>Responsible Party:</label>
+    <input type="text" placeholder="Enter responsible person">
+
+    <label>Target Completion Date:</label>
+    <input type="date">
+
+    <label>Closure Status:</label>
+    <select>
+        <option>Select status</option>
+        <option>Open</option>
+        <option>In Progress</option>
+        <option>Closed</option>
+    </select>
+
+    <hr>
+
+    <section id="recommendations">
+<h2>9. Recommendations</h2>
+<h3>Commissioning Recommendations Form</h3>
+
+<label>Outstanding Commissioning Requirements:</label>
+<textarea id="outstandingRequirements"
+placeholder="List outstanding commissioning requirements"></textarea>
+
+<label>Technical Recommendations:</label>
+<textarea id="technicalRecommendations"
+placeholder="Enter technical recommendations"></textarea>
+
+<label>Operation and Maintenance Recommendations:</label>
+<textarea id="maintenanceRecommendations"
+placeholder="Enter maintenance recommendations"></textarea>
+
+<label>Safety Recommendations:</label>
+<textarea id="safetyRecommendations"
+placeholder="Enter safety recommendations"></textarea>
+
+<label>Overall Handover Recommendation:</label>
+<select id="handoverRecommendation">
+    <option value="">Select handover recommendation</option>
+    <option>Ready for Handover</option>
+    <option>Conditional Handover</option>
+    <option>Not Ready for Handover</option>
+</select>
+
+<label>Prepared By:</label>
+<input type="text" id="preparedBy"
+placeholder="Enter commissioning officer's name">
+
+<label>Date of Assessment:</label>
+<input type="date" id="assessmentDate">
+
+<button type="button" onclick="saveRecommendations()">
+    Save Recommendations
+</button>
+
+<h3>Saved Commissioning Recommendations</h3>
+
+<div id="recommendationResults"></div>
+<div class="report-actions">
+
+    <button type="button" onclick="generateReport()">
+        GENERATE COMMISSIONING REPORT
+    </button>
+
+</div>
+
+    <label>Outstanding Requirements:</label>
+    <textarea placeholder="Enter outstanding requirements"></textarea>
+
+    <label>Technical Recommendations:</label>
+    <textarea placeholder="Enter recommendations"></textarea>
+
+    <label>Handover Recommendation:</label>
+    <select>
+        <option>Select recommendation</option>
+        <option>Ready for Handover</option>
+        <option>Conditional Handover</option>
+        <option>Not Ready for Handover</option>
+    </select>
+<script src="script.js"></script>
+<div class="app-layout">
+
+    <aside class="sidebar">
+
+        <h2>COMMISSIONING</h2>
+
+        <p>REPORT SYSTEM</p>
+
+        <nav>
+            <a href="#dashboard">Overview Dashboard</a>
+            <a href="#profile">Project Profile</a>
+            <a href="#brief">Commissioning Brief</a>
+            <a href="#services">Building Services Evaluation</a>
+            <a href="#testing">Inspection & Testing</a>
+            <a href="#defects">Non-Conformance Register</a>
+            <a href="#documents">Documentation & Compliance</a>
+            <a href="#actions">Corrective Actions</a>
+            <a href="#recommendations">Recommendations</a>
+        </nav>
+
+    </aside>
+
+    <main class="main-content">
+</body>
+</html>
